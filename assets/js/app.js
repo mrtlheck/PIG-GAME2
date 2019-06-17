@@ -142,3 +142,7 @@ function badRoll(dice) {
     playerChange();
 }
 
+$('.clr').addEventListener('click', function(){
+    $('.rules').classList.add('gameOver');
+    // alert('btn clicked');
+})
