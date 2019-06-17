@@ -2,11 +2,21 @@
 *** GENERAL
 **********************************************/
 
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif:400,700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     
+}
+
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    font-family: 'Noto Serif';
+    text-transform: uppercase;
 }
 
 .clearfix::after {

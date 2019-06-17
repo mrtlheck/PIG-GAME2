@@ -14,7 +14,11 @@ window.$$ = document.getElementById.bind(document);
 
 var scores,
     roundScore,
-    activePlayer;
+    activePlayer,
+    rolledSix,
+    dblSixes,
+    viewDice;
+    // goodRoll = true;
 
 // scores = [0,0];
 // roundScore = 0;
@@ -29,21 +33,25 @@ $('.btn-roll').addEventListener('click', function() {
     // 1. gen a random number
     var dice = Math.floor(Math.random() * 6) + 1;
     
-    if (dice === 1) {
-        $('.dice').src = 'assets/pic/dice-' + dice + ".png";
-        $('#current-' + activePlayer).textContent ='0';
-        playerChange();
-        // console.log("active player is: " + activePlayer);
-    } else {
-    // 2. display result
-    $('.dice').classList.remove('gameOver');
-    $('.dice').src = 'assets/pic/dice-' + dice + ".png";
+    // validRoll(dice, goodRoll);
+    // console.log('Roll is valid: ' + goodRoll);
 
-    //3. update the round score IF the roll is not a 1.
-    roundScore = Number($('#current-' + activePlayer).textContent) + dice;
-    $('#current-' + activePlayer).textContent = roundScore;
-    };
-} )
+    if (dice === 1) {
+        badRoll(dice);
+        // console.log("active player is: " + activePlayer);
+    } else if (dice === 6 && rolledSix === false) {
+        rolledSix = true;
+        goodRoll(dice);
+    } else if (dice === 6 && rolledSix === true) {
+        doubleSixes();
+        rolledSix = false;
+    } 
+    else {
+        console.log('did not roll a six')
+        goodRoll(dice);
+        rolledSix = false;
+    } 
+})
 
 $('.btn-hold').addEventListener('click', function(){
     $('.dice').classList.add('gameOver');
@@ -55,9 +63,12 @@ $('.btn-hold').addEventListener('click', function(){
 
 
 function playerChange() {
+    $('.dice').classList.add('gameOver');
     $('.player-' + activePlayer + '-panel').classList.toggle('active');
     activePlayer ? activePlayer = 0 : activePlayer = 1;
     roundScore = 0;
+    rolledSix = false;
+    console.log(rolledSix);
     $('.player-'+activePlayer+'-panel').classList.toggle('active');
     
 }
@@ -84,6 +95,9 @@ function init() {
     scores = [0,0];
     activePlayer = 0;
     roundScore = 0;
+
+    rolledSix = false;
+    dblSixes = false;
 }
 
 function checkWinner() {
@@ -96,5 +110,35 @@ function checkWinner() {
     } else {
         playerChange();
     }
+}
+
+function doubleSixes () {
+    $('.dice').classList.add('gameOver');
+    $$('score-' + activePlayer).textContent = '0';
+    $$('current-' + activePlayer).textContent = '0';
+    roundScore = 0;
+    scores[activePlayer] = 0;
+    alert('rolled Double sixes');
+    playerChange();
+}
+
+function goodRoll(dice) {
+    console.log('GOOD ROLL');
+    console.log('dice = ' + dice)
+    console.log('Active Player: ' + activePlayer);
+    $('.dice').classList.remove('gameOver');
+    $('.dice').src = 'assets/pic/dice-' + dice + ".png";
+    //3. update the round score IF the roll is not a 1.
+    roundScore = Number($('#current-' + activePlayer).textContent) + dice;
+    $('#current-' + activePlayer).textContent = roundScore;
+}
+
+function badRoll(dice) {
+    console.log('BAD ROLL');
+    console.log('dice = ' + dice)
+    console.log('Active Player: ' + activePlayer);
+    $('.dice').src = 'assets/pic/dice-' + dice + ".png";
+    $('#current-' + activePlayer).textContent ='0';
+    playerChange();
 }
 
