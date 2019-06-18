@@ -63,7 +63,7 @@ $('.btn-hold').addEventListener('click', function(){
 
 
 function playerChange() {
-    $('.dice').classList.add('gameOver');
+    // $('.dice').classList.add('gameOver');
     $('.player-' + activePlayer + '-panel').classList.toggle('active');
     activePlayer ? activePlayer = 0 : activePlayer = 1;
     roundScore = 0;
@@ -123,9 +123,9 @@ function doubleSixes () {
 }
 
 function goodRoll(dice) {
-    console.log('GOOD ROLL');
-    console.log('dice = ' + dice)
-    console.log('Active Player: ' + activePlayer);
+    // console.log('GOOD ROLL');
+    // console.log('dice = ' + dice)
+    // console.log('Active Player: ' + activePlayer);
     $('.dice').classList.remove('gameOver');
     $('.dice').src = 'assets/pic/dice-' + dice + ".png";
     //3. update the round score IF the roll is not a 1.
@@ -134,9 +134,9 @@ function goodRoll(dice) {
 }
 
 function badRoll(dice) {
-    console.log('BAD ROLL');
-    console.log('dice = ' + dice)
-    console.log('Active Player: ' + activePlayer);
+    // console.log('BAD ROLL');
+    // console.log('dice = ' + dice)
+    // console.log('Active Player: ' + activePlayer);
     $('.dice').src = 'assets/pic/dice-' + dice + ".png";
     $('#current-' + activePlayer).textContent ='0';
     playerChange();
