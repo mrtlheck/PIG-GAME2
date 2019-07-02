@@ -16,43 +16,16 @@ var scores,
     roundScore,
     activePlayer,
     rollSix,
-    dblSixes,
-    viewDice,
-    testScore,
     winningScore;
-    // goodRoll = true;
-
-// scores = [0,0];
-// roundScore = 0;
-// activePlayer = 0;
 
 init();
 
 
-// $('.dice').style.display = 'none';
 
 $('.btn-roll').addEventListener('click', function() {
     // 1. gen a random number
     var dice = Math.floor(Math.random() * 6) + 1;
-    
-    // validRoll(dice, goodRoll);
-    // console.log('Roll is valid: ' + goodRoll);
-
-    // if (dice === 1) {
-    //     badRoll(dice);
-    //     // console.log("active player is: " + activePlayer);
-    // } else if (dice === 6 && rolledSix === false) {
-    //     rolledSix = true;
-    //     goodRoll(dice);
-    // } else if (dice === 6 && rolledSix === true) {
-    //     doubleSixes();
-    //     rolledSix = false;
-    // } 
-    // else {
-    //     console.log('did not roll a six')
-    //     goodRoll(dice);
-    //     rolledSix = false;
-    // } 
+     
     if (dice === 6 && rollSix === 6) {
         $$('score-' + activePlayer).textContent = '0';
         score[activePlayer] = 0;
@@ -75,13 +48,6 @@ $('.btn-roll').addEventListener('click', function() {
     rollSix = dice;
 })
 
-// $('.btn-hold').addEventListener('click', function(){
-//     $('.dice').classList.add('gameOver');
-//        scores[activePlayer] += roundScore;
-//     $$('score-' + activePlayer).textContent = scores[activePlayer];
-//     $('#current-' + activePlayer).textContent = '0';
-//     checkWinner(); 
-// })
 
 $('.btn-hold').addEventListener('click', function(){
     $('.dice').classList.add('gameOver');
@@ -100,16 +66,6 @@ $('.btn-hold').addEventListener('click', function(){
     checkWinner();
 })
 
-// function playerChange() {
-//     // $('.dice').classList.add('gameOver');
-//     $('.player-' + activePlayer + '-panel').classList.toggle('active');
-//     activePlayer ? activePlayer = 0 : activePlayer = 1;
-//     roundScore = 0;
-//     rolledSix = false;
-//     console.log(rolledSix);
-//     $('.player-'+activePlayer+'-panel').classList.toggle('active');
-    
-// }
 
 function playerChange() {
     $('.player-' + activePlayer + '-panel').classList.toggle('active');
@@ -123,29 +79,6 @@ $('.btn-new').addEventListener('click', function(){
     init();
 })
 
-// function init() {
-//     $('.dice').classList.add('gameOver');
-//     $$('score-0').textContent = '0';
-//     $$('score-1').textContent = '0';
-//     $$('current-0').textContent = '0';
-//     $$('current-1').textContent = '0';
-//     $$('name-0').textContent = 'PLAYER 1';
-//     $$('name-1').textContent = 'PLAYER 2';
-//     $('.player-0-panel').classList.remove('active');
-//     $('.player-1-panel').classList.remove('active');
-//     $('.player-0-panel').classList.remove('winner');
-//     $('.player-1-panel').classList.remove('winner');
-//     $('.player-0-panel').classList.add('active');
-//     $('.btn-roll').classList.remove('gameOver');
-//     $('.btn-hold').classList.remove('gameOver');
-//     scores = [0,0];
-//     activePlayer = 0;
-//     roundScore = 0;
-//     testScore = 0;
-//     winScore = 100;
-//     rolledSix = false;
-//     dblSixes = false;
-// }
 
 function init() {
     $('.dice').classList.add('gameOver');
@@ -183,48 +116,9 @@ function checkWinner() {
     }
 }
 
-// function doubleSixes () {
-//     $('.dice').classList.add('gameOver');
-//     $$('score-' + activePlayer).textContent = '0';
-//     $$('current-' + activePlayer).textContent = '0';
-//     roundScore = 0;
-//     scores[activePlayer] = 0;
-//     alert('rolled Double sixes');
-//     playerChange();
-// }
-
-// function goodRoll(dice) {
-//     // console.log('GOOD ROLL');
-//     // console.log('dice = ' + dice)
-//     // console.log('Active Player: ' + activePlayer);
-//     $('.dice').classList.remove('gameOver');
-//     $('.dice').src = 'assets/pic/dice-' + dice + ".png";
-//     //3. update the round score IF the roll is not a 1.
-//     roundScore = Number($('#current-' + activePlayer).textContent) + dice;
-//     $('#current-' + activePlayer).textContent = roundScore;
-// }
-
-// function badRoll(dice) {
-//     // console.log('BAD ROLL');
-//     // console.log('dice = ' + dice)
-//     // console.log('Active Player: ' + activePlayer);
-//     $('.dice').src = 'assets/pic/dice-' + dice + ".png";
-//     $('#current-' + activePlayer).textContent ='0';
-//     playerChange();
-// }
 
 $('.btn-clr').addEventListener('click', function(){
     $('.rules').classList.add('gameOver');
-    // if ($('newScore').textContent === null){
-    //     testScore = 0;
-    //     console.log(testScore);
-    // } else {
-    //     testScore = $('newScore').textContent
-    //     console.log(testScore);
-    // }
-        
-
 })
 
 
-// testScore = Number($('newScore').textContent);

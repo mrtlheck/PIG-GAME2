@@ -21,15 +21,6 @@ h1 {
     text-transform: uppercase;
 }
 
-
-
-/* .gameOpts {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    /* border: 1px solid red; 
-} */
-
 .clearfix::after {
     content: "";
     display: table;
@@ -142,7 +133,6 @@ button {
 
 button:hover { font-weight: 600; }
 button:hover i { margin-right: 20px; }
-/* button:hover img {margin-left: 40px;} */
 button:focus {
     outline: none;
 }
