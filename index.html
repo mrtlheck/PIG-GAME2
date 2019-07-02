@@ -12,6 +12,10 @@
     <body>
         <header>
             <h1>pig game</h1>
+            <!-- <div class="gameOpts">
+                <a href="instruct.html">Instuctions</a><br>
+                <a href="http://">Set Winning Score</a>
+            </div> -->
         </header>
         <div class="wrapper clearfix">
             <div class="player-0-panel active">
@@ -37,7 +41,12 @@
             <!-- <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button> -->
             <button class="btn-hold"><img src="https://img.icons8.com/material-outlined/24/000000/shift.png">Hold</button>
             <img src="assets/pic/dice-5.png" alt="Dice" class="dice">
+            <!-- <button class="btn-chg">change win score </!-->
+            <input type="text" class="finalScore" placeholder="Final Score">
+
         </div>
+
+        
         
        
 
@@ -47,17 +56,17 @@
             <br>
             <ul>
                 <li>
-                    First the game is for two players.  Each player rolls a single die as many times as he/she wishes.  The result of each roll is added to his/her ROUND score.</li>
+                    First the game is for two players.  Each player rolls a single die as many times as he/she wishes.  The result of each roll is added to his/her <em>round</em> score.</li>
                 <li>
-                    If the player rolls a 1 he loses  ROUND score and the turn passes to the next player</li>
+                    If the player rolls a 1 he loses the <em>round</em> score and the turn passes to the next player</li>
                 <li>
-                    Additionally, if a player rolls a double six, he/she loses both his round and Global score.</li>
+                    Additionally, if a player rolls a double six, he/she loses both his <em>round</em> and <em>Global</em> score.</li>
                 <li>
-                    The player can choose to 'Hold', which means that his ROUND score gets added to his "Global" score. After that, it's the next player's turn</li>
+                    The player can choose to 'Hold', which means that his round score gets added to his <em>Global</em> score. After that, it's the next player's turn</li>
                 <li>
-                    The first player to reach 100 points in their "Global" score wins the game.</li>
+                    By default, the first player to reach 100 points in their <em>Global</em> score wins the game. Click 'CLOSE' below to play to 100 or to play a shorter game enter a new Global score here: 
             </ul>
-            <button class="clr">close</button>
+            <button class="btn-clr">close</button>
         </div>
 
          <script src="assets/js/app.js"></script>

@@ -21,6 +21,15 @@ h1 {
     text-transform: uppercase;
 }
 
+
+
+/* .gameOpts {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    /* border: 1px solid red; 
+} */
+
 .clearfix::after {
     content: "";
     display: table;
@@ -53,7 +62,7 @@ body {
 .player-1-panel {
     width: 50%;
     float: left;
-    height: 600px;
+    height: 60vh;
     padding: 100px;
 }
 
@@ -152,6 +161,23 @@ i {
 .btn-new { top: 45px;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
+.btn-clr {
+    bottom: 2rem;
+    color: black;
+}
+
+.finalScore {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 10%;
+    /* top: 500px; */
+    text-align: center;
+    width: 6rem;
+    text-transform: uppercase;
+    font-family: lato;
+}
+
 
 .dice {
     position: absolute;
@@ -173,10 +199,10 @@ i {
     background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url('/assets/pic/back.jpg');
     background-size: cover;
     background-position: center;
-    width: 1000px;
-    height: 600px;
+    width: 80vw;
+    height: 70vh;
     position: absolute;
-    padding: 5px;
+    padding: 2rem;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
